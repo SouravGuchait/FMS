@@ -1,0 +1,8 @@
+package org.flightmanagementsystem.dao;
+
+import org.flightmanagementsystem.model.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Bookingdao extends JpaRepository<Booking,Integer>{
+
+}

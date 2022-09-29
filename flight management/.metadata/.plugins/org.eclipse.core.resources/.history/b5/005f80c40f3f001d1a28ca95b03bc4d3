@@ -1,0 +1,90 @@
+package org.flightmanagementsystem.model;
+
+import java.math.BigInteger;
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "flight")
+public class Booking {
+	@Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+	private BigInteger bookingId;
+	private User userId;
+	private Date bookingDate;
+	private List<Passenger> passengerList;
+	private Double ticketCost;
+	private Flight flight;
+	private int noOfPassergers;
+	public Booking(BigInteger bookingId, User userId, Date bookingDate, List<Passenger> passengerList,
+			Double ticketCost, Flight flight, int noOfPassergers) {
+		super();
+		this.bookingId = bookingId;
+		this.userId = userId;
+		this.bookingDate = bookingDate;
+		this.passengerList = passengerList;
+		this.ticketCost = ticketCost;
+		this.flight = flight;
+		this.noOfPassergers = noOfPassergers;
+	}
+	public Booking() {
+		super();
+	}
+	public BigInteger getBookingId() {
+		return bookingId;
+	}
+	public void setBookingId(BigInteger bookingId) {
+		this.bookingId = bookingId;
+	}
+	public User getUserId() {
+		return userId;
+	}
+	public void setUserId(User userId) {
+		this.userId = userId;
+	}
+	public Date getBookingDate() {
+		return bookingDate;
+	}
+	public void setBookingDate(Date bookingDate) {
+		this.bookingDate = bookingDate;
+	}
+	public List<Passenger> getPassengerList() {
+		return passengerList;
+	}
+	public void setPassengerList(List<Passenger> passengerList) {
+		this.passengerList = passengerList;
+	}
+	public Double getTicketCost() {
+		return ticketCost;
+	}
+	public void setTicketCost(Double ticketCost) {
+		this.ticketCost = ticketCost;
+	}
+	public Flight getFlight() {
+		return flight;
+	}
+	public void setFlight(Flight flight) {
+		this.flight = flight;
+	}
+	public int getNoOfPassergers() {
+		return noOfPassergers;
+	}
+	public void setNoOfPassergers(int noOfPassergers) {
+		this.noOfPassergers = noOfPassergers;
+	}
+	@Override
+	public String toString() {
+		return "Booking [bookingId=" + bookingId + ", userId=" + userId + ", bookingDate=" + bookingDate
+				+ ", passengerList=" + passengerList + ", ticketCost=" + ticketCost + ", flight=" + flight
+				+ ", noOfPassergers=" + noOfPassergers + "]";
+	}
+	
+	
+}

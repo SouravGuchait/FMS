@@ -1,0 +1,17 @@
+package org.flightmanagementsystem.controller;
+
+import java.util.List;
+
+import org.flightmanagementsystem.model.Booking;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controller {
+	
+//get booking details
+	@GetMapping("/bookingdetails")
+	public List<Booking> getbookingdetails(){
+		return null;
+	}
+}

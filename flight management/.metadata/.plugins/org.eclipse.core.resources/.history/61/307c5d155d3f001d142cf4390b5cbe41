@@ -1,0 +1,13 @@
+package org.flightmanagementsystem.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.flightmanagementsystem.passengermodel.Passenger;
+
+public class PassengerRepository {
+	public interface PassengerService extends JpaRepository<Passenger,Long> {
+
+	}
+
+		public Passenger savePassenger(Passenger passenger) ;
+		}

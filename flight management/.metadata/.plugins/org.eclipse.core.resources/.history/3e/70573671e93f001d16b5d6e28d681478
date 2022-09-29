@@ -1,0 +1,5 @@
+package org.flightmanagementsystem.dto;
+
+public class Bookingrequest {
+
+}

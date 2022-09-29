@@ -1,0 +1,28 @@
+package org.flightmanagementsystem.services;
+
+
+import java.util.List;
+
+import org.flightmanagementsystem.dao.Bookingdao;
+import org.flightmanagementsystem.exception.RecordAlreadyPresentException;
+import org.flightmanagementsystem.model.Booking;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import net.bytebuddy.dynamic.DynamicType.Builder.MethodDefinition.ImplementationDefinition.Optional;
+
+@Service
+public class ServiceImpl implements BookingService{
+	@Autowired
+	Bookingdao bookingDao;
+	@Override
+	public Iterable<Booking> displayAllBooking() {
+
+		return bookingDao.findAll();
+	}
+
+	
+
+

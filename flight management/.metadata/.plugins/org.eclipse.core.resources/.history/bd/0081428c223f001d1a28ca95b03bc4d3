@@ -1,0 +1,21 @@
+package org.flightmanagementsystem.services;
+
+import org.flightmanagementsystem.model.Booking;
+import org.springframework.http.ResponseEntity;
+
+
+
+public interface BookingService {
+
+//	public ResponseEntity<?> createBooking(Booking newBooking);
+
+	public Iterable<Booking> displayAllBooking();
+
+//	public Booking updateBooking(Booking newBooking);
+//
+//	public String deleteBooking(BigInteger bookingId);
+//
+
+
+//	public ResponseEntity<?> findBookingById(BigInteger bookingId);
+}

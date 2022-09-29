@@ -1,0 +1,90 @@
+package org.flightmanagementsystem.services;
+
+import java.math.BigInteger;
+import java.util.List;
+
+import org.flightmanagementsystem.dao.UserDao;
+import org.flightmanagementsystem.exception.ResourceNotFoundException;
+import org.flightmanagementsystem.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+
+@Service
+public class UserServiceImpl implements UserService {
+
+
+
+   //Dependency Injection
+    @Autowired
+    private UserDao userDao;
+    
+    //Constructor injection.
+    public UserServiceImpl(UserDao userDao) {
+        super();
+        this.userDao = userDao;
+    }
+
+
+
+
+    //addUser method
+    @Override
+    public User addUser(User user) {
+        
+        return userDao.save(user);
+    }
+
+
+
+
+    //Find a single user
+    @Override
+    public User viewUser(BigInteger id) {
+        return userDao.findById(id).orElseThrow( ()->
+        new ResourceNotFoundException("User", "Id", id));
+    }
+
+
+
+
+    //Find all users
+    @Override
+    public List<User> viewAllUser() {
+        
+        return userDao.findAll();
+    }
+
+
+
+
+    //Update user
+    @Override
+    public User updateUser(User user, BigInteger id) {
+        User userObj = userDao.findById(id).orElseThrow(()-> new ResourceNotFoundException("User","Id",id));
+        userObj.setUserType(user.getUserType());
+        userObj.setUserName(user.getUserName());
+        userObj.setUserPassword(user.getUserPassword());
+        userObj.setUserPhone(user.getUserPhone());
+        userObj.setUserEmail(user.getUserEmail());
+        userDao.save(userObj);
+        return userObj;
+    }
+
+
+
+
+    //Delete user
+    @Override
+    public void deleteUser(BigInteger id) {
+        userDao.findById(id).orElseThrow(()-> new ResourceNotFoundException("User","Id",id));
+        userDao.deleteById(id);
+        
+    }
+    
+    
+
+
+
+}

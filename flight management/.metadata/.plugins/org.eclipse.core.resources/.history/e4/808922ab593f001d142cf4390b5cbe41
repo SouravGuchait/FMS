@@ -1,0 +1,9 @@
+package org.flightmanagementsystem.exception;
+
+@SuppressWarnings("serial")
+public class DataNotFoundException extends RuntimeException {
+	public DataNotFoundException(String s) {
+		super(s);
+	}
+
+}

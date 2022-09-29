@@ -1,0 +1,5 @@
+package org.flightmanagementsystem.controller;
+
+public class PasengerController {
+
+}

@@ -1,0 +1,22 @@
+package org.flightmanagementsystem.controller;
+
+import java.util.List;
+
+import org.flightmanagementsystem.model.Booking;
+import org.flightmanagementsystem.services.Bookingservice;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controller {
+	
+	@Autowired
+	private Bookingservice services;
+	
+//get booking details
+	@GetMapping("/bookingdetails")
+	public List<Booking> getBookingDetails(){
+		return this.services.getBookingDetails();
+	}
+}

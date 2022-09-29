@@ -1,0 +1,10 @@
+package org.flightmanagementsystem.services;
+
+import java.util.List;
+
+import org.flightmanagementsystem.model.Booking;
+
+public interface Service {
+	
+	public List<Booking> getBookingDetails();
+}

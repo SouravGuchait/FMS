@@ -1,0 +1,8 @@
+package org.flightmanagementsystem.dto;
+
+import org.flightmanagementsystem.model.Booking;
+
+public class Bookingrequest {
+	
+	private Booking booking;
+}

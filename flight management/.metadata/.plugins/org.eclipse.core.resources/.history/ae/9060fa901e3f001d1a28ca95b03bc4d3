@@ -1,0 +1,21 @@
+package org.flightmanagementsystem.services;
+
+
+import java.util.List;
+
+import org.flightmanagementsystem.dao.Bookingdao;
+import org.flightmanagementsystem.model.Booking;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ServiceImpl implements Bookingservice{
+	
+	@Override
+	public List<Booking> getBookingDetails() {
+		return Bookingdao.findAll():
+		
+	}
+	
+}
+
+

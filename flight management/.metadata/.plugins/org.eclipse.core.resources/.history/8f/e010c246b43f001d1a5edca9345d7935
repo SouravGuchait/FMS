@@ -1,0 +1,15 @@
+package org.flightmanagementsystem.services;
+
+import java.util.List;
+
+import org.flightmanagementsystem.model.Passenger;
+
+
+
+
+
+public interface PassengerService {
+Passenger getPassengerById (String passengrId);
+List<Passenger> getAllPassengers();
+Passenger savePassenger(Passenger passenger);
+}

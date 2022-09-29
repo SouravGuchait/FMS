@@ -1,0 +1,18 @@
+package org.flightmanagementsystem.model;
+
+import java.math.BigInteger;
+import java.util.Date;
+import java.util.List;
+
+
+
+public class Booking {
+	private BigInteger bookingId;
+	private User userId;
+	private Date bookingDate;
+	private List<Passenger> passengerList;
+	private Double ticketCost;
+	private Flight flight;
+	private int noOfPassergers;
+	
+}

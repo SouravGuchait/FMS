@@ -1,0 +1,79 @@
+package org.flightmanagementsystem.services;
+
+import java.math.BigInteger;
+import java.util.List;
+
+import org.flightmanagementsystem.dao.FlightDao;
+import org.flightmanagementsystem.exception.ResourceNotFoundException;
+import org.flightmanagementsystem.model.Flight;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class FlightServiceImpl implements FlightService{
+	
+	
+
+	@Autowired
+	private FlightDao flightDao;
+
+	
+	
+	//constructor
+	public FlightServiceImpl(FlightDao flightDao) {
+		super();
+		this.flightDao = flightDao;
+	}
+
+
+
+
+	@Override
+	public Flight addFlight(Flight flight) {
+		// TODO Auto-generated method stub
+		return flightDao.save(flight);
+	}
+
+
+
+
+	@Override
+	public Flight modifyFlight(Flight flight, BigInteger id) {
+		Flight object = flightDao.findById(id).orElseThrow(() -> new ResourceNotFoundException("Flight" , "Id",id));
+		object.setCarrierName(flight.getCarrierName());
+		object.setFlightModel(flight.getFlightModel());
+		object.setSeatCapacity(flight.getSeatCapacity());
+		flightDao.save(object);
+		return object;
+	}
+
+
+	@Override
+	public Flight viewFlight(BigInteger flightNumber) {
+		
+		return flightDao.findById(flightNumber).orElseThrow(() -> 
+		new ResourceNotFoundException ("Flight", "Id", flightNumber) );
+	}
+
+	@Override
+	public List<Flight> viewAllFlight() {
+        return flightDao.findAll();
+    }
+
+	@Override
+	public Flight deleteFlight(BigInteger flightNumber) {
+		 Flight del = flightDao.findById(flightNumber).orElseThrow( ()->
+		 new ResourceNotFoundException("Flight","Id",flightNumber));
+		 flightDao.deleteById(flightNumber);
+		 return del;
+	        
+	    }
+
+
+
+
+	
+	
+	
+
+}

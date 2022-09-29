@@ -1,0 +1,14 @@
+package org.flightmanagementsystem.services;
+
+import java.util.List;
+
+import org.flightmanagementsystem.model.Booking;
+
+public class ServiceImpl implements Service {
+
+	@Override
+	public List<Booking> getBookingDetails() {
+		return ;
+	}
+
+}

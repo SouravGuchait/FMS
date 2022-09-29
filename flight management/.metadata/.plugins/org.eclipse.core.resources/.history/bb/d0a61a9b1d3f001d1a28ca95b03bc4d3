@@ -1,0 +1,20 @@
+package org.flightmanagementsystem.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.flightmanagementsystem.model.Booking;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ServiceImpl implements Bookingservice{
+	
+	@Override
+	public List<Booking> getBookingDetails() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+
+

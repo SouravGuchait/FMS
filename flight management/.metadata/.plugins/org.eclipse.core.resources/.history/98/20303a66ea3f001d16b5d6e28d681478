@@ -1,0 +1,23 @@
+package org.flightmanagementsystem.controller;
+
+import org.flightmanagementsystem.dao.BookingDao;
+import org.flightmanagementsystem.dao.UserDao;
+import org.flightmanagementsystem.dto.Bookingrequest;
+import org.flightmanagementsystem.model.Booking;
+import org.flightmanagementsystem.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+public class PassengerbookingController {
+	@Autowired
+	private UserDao userdao;
+	
+	@Autowired
+	private BookingDao bookingDao;
+	
+	@PostMapping("/bookedUser")
+	public Booking bookingrequest(@RequestBody Bookingrequest request) {
+		return BookingDao.save(request.);
+	}
+}
